@@ -11,7 +11,7 @@ h1 {
   margin: 0 0 1.5em 0;
 }
 
-a {
+.poweredBy > h4 > a {
   color: teal;
   display: inline;
   padding: 0;
