@@ -1,0 +1,39 @@
+{
+  "components": {
+    "Nav": {
+      "about": "Acerca de",
+      "blog": "Blog",
+      "home": "Inicio"
+    },
+    "Search": {
+      "title": "Búsqueda de películas con Svelte",
+      "query": {
+        "label": "Nombre de la película",
+        "placeholder": "ej: Batman Begins",
+        "button": "Buscar",
+        "errors": {
+          "empty": "La consulta no debe estar vacía",
+          "notFound": "La consulta: `{query}` no produjo resultados",
+          "generic": "La consulta: `{query}` ocasionó un error: {error}"
+        },
+        "loading": {
+          "message": "Buscando..."
+        }
+      }
+    }
+  },
+  "route": {
+    "index": {
+      "title": "Búsqueda de películas con Svelte"
+    },
+    "layout": {
+      "loading": {
+        "message": "Cargando..."
+      }
+    },
+    "about": {
+      "dev": "Hola! desde Paraguay, corazón de Sudamérica, mi nombre es Christian Melgarejo, padre de 2, tech-enthusiast, motivado, trabajador e incansable full-stack senior developer con más de {xp} años de experiencia en un amplio rango de tecnologías",
+      "title": "Acerca de cmelgarejo"
+    }
+  }
+}

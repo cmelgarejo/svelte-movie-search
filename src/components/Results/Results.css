@@ -1,0 +1,113 @@
+.container {
+  margin: 0 auto;
+  max-width: 1000px;
+  padding: 40px;
+}
+
+.title {
+  font-size: 4.4rem;
+  text-align: center;
+}
+
+.form {
+  display: grid;
+}
+
+.label {
+  font-size: 1.2rem;
+  margin-bottom: 0.2rem;
+  text-transform: uppercase;
+}
+
+.input {
+  font-size: 1.6rem;
+  padding: 0.5rem 2rem;
+  line-height: 2.8rem;
+  border-radius: 20px;
+  border: 1px solid #ddd;
+  margin-bottom: 1rem;
+}
+
+.button {
+  background-color: rgba(0, 0, 0, 0.75);
+  color: white;
+  padding: 1rem 2rem;
+  border: 1px solid rgba(0, 0, 0, 0.75);
+  border-radius: 20px;
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: background-color 250ms;
+}
+
+.button:hover {
+  background-color: rgba(0, 0, 0, 0.85);
+}
+
+.card {
+  display: flex;
+  color: #000;
+  background-color: #f4f4f4;
+  min-height: 300px;
+  max-height: 300px;
+  border-radius: 1em;
+  margin: 0.1em 0 0 0.1em;
+  border: 2px solid green;
+}
+
+.card-image {
+  flex: 1;
+  width: 100%;
+  height: auto;
+  max-width: 200px;
+  border-radius: 1em;
+  margin-right: 0.5em;
+}
+
+.card-info {
+  flex: 1;
+  max-width: 150px;
+  overflow: hidden;
+}
+
+.card-title {
+  flex: 1;
+  font-weight: bolder;
+  font-size: large;
+}
+.card-content {
+  flex: 1;
+  height: 100%;
+  font-size: small;
+  overflow-y: scroll;
+}
+
+.column {
+  float: left;
+  width: 50%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other on smaller screens (600px wide or less) */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}
+
+@media (min-width: 786px) {
+  .form {
+    grid-template-columns: auto 1fr auto;
+    grid-gap: 1rem;
+    align-items: center;
+  }
+
+  .input {
+    margin-bottom: 0;
+  }
+}

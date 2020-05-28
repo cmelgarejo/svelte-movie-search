@@ -1,0 +1,39 @@
+{
+  "components": {
+    "Nav": {
+      "about": "About",
+      "blog": "Blog",
+      "home": "Home"
+    },
+    "Search": {
+      "title": "Svelte Movie Search",
+      "query": {
+        "label": "Movie name",
+        "placeholder": "i.e: Batman Begins",
+        "button": "Search",
+        "errors": {
+          "empty": "The query should not be empty",
+          "notFound": "The query: {query} produced no results",
+          "generic": "Query [{query}] produced an error: {error}"
+        }
+      },
+      "loading": {
+        "message": "Searching..."
+      }
+    }
+  },
+  "route": {
+    "index": {
+      "title": "Svelte Movie Search"
+    },
+    "layout": {
+      "loading": {
+        "message": "Loading..."
+      }
+    },
+    "about": {
+      "dev": "Hi there! from Paraguay, heart of South America, my name is Christian, father of 2, tech-enthusiast, hard-working and self-motivated full-stack senior developer with over {xp} years of experience in a wide range of technologies",
+      "title": "About cmelgarejo"
+    }
+  }
+}
