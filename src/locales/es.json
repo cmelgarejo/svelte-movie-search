@@ -7,8 +7,9 @@
     },
     "Search": {
       "title": "Búsqueda de películas",
-      "poweredBy": "svelte",
+      "poweredBy": "powered by",
       "query": {
+        "adultCheck": "Incluir peliculas para adultos",
         "label": "Nombre de la película",
         "placeholder": "ej: Batman Begins",
         "button": "Buscar",

@@ -7,8 +7,9 @@
     },
     "Search": {
       "title": "Movie Search",
-      "poweredBy": "svelte",
+      "poweredBy": "powered by svelte.dev",
       "query": {
+        "adultCheck": "Include adult movies",
         "label": "Movie name",
         "placeholder": "i.e: Batman Begins",
         "button": "Search",
