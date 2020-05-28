@@ -17,7 +17,7 @@
         const res = await fetch(
           `https://api.themoviedb.org/3/search/movie?api_key=32f5a11a2577818213010e38bacc5a55&language=${$locale}&query=${query}&page=1&include_adult=true`
         );
-        let json = await res.json();
+        const json = await res.json();
         if (json.results && json.results.length)
           dispatcher("found", json.results);
         else

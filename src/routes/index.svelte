@@ -9,7 +9,10 @@
 
   const onError = e => (error = e.detail);
   const onFound = e => (movies = e.detail);
-  const onSearching = e => (loader = e.detail);
+  const onSearching = e => {
+    loader = e.detail;
+    if (loader.loading) movies = [];
+  };
 </script>
 
 <style>
@@ -24,7 +27,6 @@
   :global(body) {
     margin: 0;
     padding: 0;
-    background-color: rgb(244, 244, 244);
     color: #333;
   }
 
@@ -37,6 +39,7 @@
   }
 
   :global(.error) {
+    text-align: center;
     color: #ff0000;
   }
 </style>
@@ -45,13 +48,11 @@
   <title>{$_('route.index.title')}</title>
 </svelte:head>
 
+<Search on:error={onError} on:found={onFound} on:searching={onSearching} />
 {#if error}
   <p class="error">{error}</p>
 {/if}
-
-{#if loader.loading}
+<!-- {#if loader.loading}
   <p class="error">{loader.message}</p>
-{/if}
-
-<Search on:error={onError} on:found={onFound} on:searching={onSearching} />
-<Results on:error={onError} {movies} />
+{/if} -->
+<Results on:error={onError} {movies} searching={loader.loading} />

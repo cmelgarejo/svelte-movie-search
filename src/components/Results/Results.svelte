@@ -1,8 +1,19 @@
 <script>
   import "./Results.css";
   export let movies = [];
+  export let searching = false;
 </script>
 
+{#if searching}
+  <div class="loader">
+    <div class="lds-ellipsis">
+      <div />
+      <div />
+      <div />
+      <div />
+    </div>
+  </div>
+{/if}
 <div class="container">
   <div class="row">
     {#each movies as m}

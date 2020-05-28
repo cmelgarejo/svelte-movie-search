@@ -1,6 +1,7 @@
 <script context="module">
   import { _, waitLocale, isLoading } from "svelte-i18n";
   export async function preload() {
+    console.log("PRELOADING...");
     return waitLocale();
   }
 </script>
@@ -19,10 +20,13 @@
     margin: 0 auto;
     box-sizing: border-box;
   }
+  .loading {
+    text-align: center;
+  }
 </style>
 
 {#if $isLoading}
-  {$_('route.layout.loading.message')}
+  <div class="loading">{$_('route.layout.loading.message')}</div>
 {:else}
   <Nav {segment} />
 

@@ -3,6 +3,7 @@ nav {
   padding: 0 1em;
   display: flex;
   justify-content: space-between;
+  background-color: #f4f4f4;
 }
 ul {
   margin: 0;

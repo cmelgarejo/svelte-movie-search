@@ -6,7 +6,8 @@
       "home": "Home"
     },
     "Search": {
-      "title": "Svelte Movie Search",
+      "title": "Movie Search",
+      "poweredBy": "svelte",
       "query": {
         "label": "Movie name",
         "placeholder": "i.e: Batman Begins",
@@ -24,7 +25,8 @@
   },
   "route": {
     "index": {
-      "title": "Svelte Movie Search"
+      "title": "Movie Search",
+      "poweredBy": "svelte"
     },
     "layout": {
       "loading": {
@@ -32,7 +34,7 @@
       }
     },
     "about": {
-      "dev": "Hi there! from Paraguay, heart of South America, my name is Christian, father of 2, tech-enthusiast, hard-working and self-motivated full-stack senior developer with over {xp} years of experience in a wide range of technologies",
+      "dev": "Hi there! from Paraguay, heart of South America, my name is Christian, father of 2, tech-enthusiast, hard-working and self-motivated fullstack senior developer with over {xp} years of experience in a wide range of technologies",
       "title": "About cmelgarejo"
     }
   }

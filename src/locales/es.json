@@ -6,7 +6,8 @@
       "home": "Inicio"
     },
     "Search": {
-      "title": "Búsqueda de películas con Svelte",
+      "title": "Búsqueda de películas",
+      "poweredBy": "svelte",
       "query": {
         "label": "Nombre de la película",
         "placeholder": "ej: Batman Begins",
@@ -24,7 +25,8 @@
   },
   "route": {
     "index": {
-      "title": "Búsqueda de películas con Svelte"
+      "title": "Búsqueda de películas",
+      "poweredBy": "svelte"
     },
     "layout": {
       "loading": {
@@ -32,7 +34,7 @@
       }
     },
     "about": {
-      "dev": "Hola! desde Paraguay, corazón de Sudamérica, mi nombre es Christian Melgarejo, padre de 2, tech-enthusiast, motivado, trabajador e incansable full-stack senior developer con más de {xp} años de experiencia en un amplio rango de tecnologías",
+      "dev": "Hola! desde Paraguay, corazón de Sudamérica, mi nombre es Christian Melgarejo, padre de 2, tech-enthusiast, fullstack senior developer con más de {xp} años de experiencia en un amplio rango de tecnologías",
       "title": "Acerca de cmelgarejo"
     }
   }
