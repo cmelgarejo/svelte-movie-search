@@ -1,5 +1,7 @@
 # svelte-movie-search
 
+Deployed [here](https://movie.cmelgarejo.net) with [vercel](https://www.vercel.com)
+
 Svelte implementation of a movie search using [TMDB](https://www.themoviedb.org/) API
 
 Using:
