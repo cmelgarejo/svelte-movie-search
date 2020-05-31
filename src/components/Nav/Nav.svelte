@@ -7,12 +7,12 @@
 <nav>
   <ul>
     <li>
-      <a class:selected={segment === undefined} href=".">
+      <a rel="prefetch" class:selected={segment === undefined} href=".">
         {$_('components.Nav.home')}
       </a>
     </li>
     <li>
-      <a class:selected={segment === 'about'} href="about">
+      <a rel="prefetch" class:selected={segment === 'about'} href="about">
         {$_('components.Nav.about')}
       </a>
     </li>
