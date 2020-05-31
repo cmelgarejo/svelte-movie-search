@@ -52,7 +52,7 @@
     </h4>
   </div>
   <form class="form" on:submit|preventDefault={search}>
-    <label class="label" htmlFor="query">
+    <label class="label" for="query">
       {$_('components.Search.query.label')}
     </label>
     <input
@@ -64,7 +64,7 @@
       {$_('components.Search.query.button')}
     </button>
     <div style="text-align:center">
-      <label class="label" htmlFor="adultCheck">
+      <label class="label" for="adultCheck">
         {$_('components.Search.query.adultCheck')}
       </label>
       <input

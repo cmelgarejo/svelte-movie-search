@@ -1,7 +1,6 @@
 <script context="module">
   import { _, waitLocale, isLoading } from "svelte-i18n";
   export async function preload() {
-    console.log("PRELOADING...");
     return waitLocale();
   }
 </script>
