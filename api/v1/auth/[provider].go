@@ -1,9 +1,7 @@
 package auth
 
 import (
-	"fmt"
 	"net/http"
-	"time"
 )
 
 // Handler entry point of the slsfn /v{X}/[provider]
