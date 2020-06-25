@@ -8,7 +8,7 @@ import (
 	"github.com/markbates/goth/gothic"
 )
 
-// ProviderHandler entry point of the slsfn /v{X}/[provider]
+// ProviderHandler entry point of the slsfn /v{X}/auth/[provider]
 func ProviderHandler(w http.ResponseWriter, r *http.Request) {
 	// You have to add value context with provider name to get provider name in GetProviderName method
 	r = addProviderToContext(r, "google")
