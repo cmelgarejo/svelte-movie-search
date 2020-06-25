@@ -92,7 +92,7 @@ func abortWithError(w *http.ResponseWriter, sc int, err error) {
 // JSON friday 13th
 func JSON(w *http.ResponseWriter, sc int, j interface{}) (err error) {
 	b, err := json.Marshal(j)
-	fmt.Fprint(*w, b)
+	fmt.Fprint(*w, string(b))
 	return err
 }
 
