@@ -93,3 +93,8 @@ func JSON(w *http.ResponseWriter, sc int, j interface{}) (err error) {
 	fmt.Fprint(*w, b)
 	return err
 }
+
+func addProviderToContext(r *http.Request, value interface{}) *http.Request {
+	return r.WithContext(context.WithValue(r.Context(),
+		string(utils.ProjectContextKeys.GothicProviderCtxKey), value))
+}
