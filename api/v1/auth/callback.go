@@ -98,7 +98,7 @@ func JSON(w *http.ResponseWriter, sc int, j interface{}) (err error) {
 
 func addProviderToContext(r *http.Request, value interface{}) *http.Request {
 	goth.UseProviders(google.New(utils.MustGet("PROVIDER_GOOGLE_KEY"), utils.MustGet("PROVIDER_GOOGLE_SECRET"),
-		r.URL.Host+"/auth/v1/auth/callback", "email", "profile", "openid"))
+		utils.MustGet("VERCEL_URL")+"/api/v1/auth/callback", "email", "profile", "openid"))
 	return r.WithContext(context.WithValue(r.Context(),
 		string(utils.ProjectContextKeys.GothicProviderCtxKey), value))
 }
