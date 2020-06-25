@@ -1,12 +1,11 @@
-package date
+package auth
 
 import (
 	"fmt"
 	"net/http"
-	"time"
 )
 
+// Handler entry point of the slsfn /v{X}/date
 func Handler(w http.ResponseWriter, r *http.Request) {
-	currentTime := time.Now().String()
-	fmt.Fprintf(w, currentTime)
+	Callback(&w, r)
 }
