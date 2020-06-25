@@ -12,9 +12,15 @@ import (
 	"github.com/markbates/goth/gothic"
 )
 
+// Claims JWT claims
+type Claims struct {
+	Email string `json:"email"`
+	jwt.StandardClaims
+}
+
 // CallbackHandler entry point of the slsfn /v{X}/date
 func CallbackHandler(w http.ResponseWriter, r *http.Request) {
-	Callback(w, r, &utils.ServerConfig{
+	callback(w, r, &utils.ServerConfig{
 		JWT: utils.JWTConfig{
 			Algorithm: "HS512",
 			Secret:    "328c69c995a14a7f944623af20396c2c6f997ae806df4cf08eaf9f569cf8f8ad",
@@ -22,8 +28,8 @@ func CallbackHandler(w http.ResponseWriter, r *http.Request) {
 	})
 }
 
-// Callback callback to complete auth provider flow
-func Callback(w http.ResponseWriter, r *http.Request, cfg *utils.ServerConfig) {
+// callback to complete auth provider flow
+func callback(w http.ResponseWriter, r *http.Request, cfg *utils.ServerConfig) {
 	// You have to add value context with provider name to get provider name in GetProviderName method
 	r = addProviderToContext(r, r.URL.Query().Get(string(utils.ProjectContextKeys.ProviderCtxKey)))
 	user, err := gothic.CompleteUserAuth(w, r)
