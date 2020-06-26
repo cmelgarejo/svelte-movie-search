@@ -16,7 +16,8 @@ import (
 
 // Claims JWT claims
 type Claims struct {
-	Email string `json:"email"`
+	Email  string `json:"email"`
+	Avatar string `json:"avatar"`
 	jwt.StandardClaims
 }
 
@@ -51,10 +52,13 @@ func callback(w http.ResponseWriter, r *http.Request, cfg *utils.ServerConfig) {
 	// logger.Debug("[Auth.CallBack.UserLoggedIn.USER]: ", u)
 	// logger.Debug("[Auth.CallBack.UserLoggedIn]: ", u.ID)
 	jwtToken := jwt.NewWithClaims(jwt.GetSigningMethod(cfg.JWT.Algorithm), Claims{
-		Email: user.Email,
+		Email:  user.Email,
+		Avatar: user.AvatarURL,
 		StandardClaims: jwt.StandardClaims{
 			Id:        user.UserID,
 			Issuer:    user.Provider,
+			Subject:   user.Email,
+			Audience:  r.Host,
 			IssuedAt:  time.Now().UTC().Unix(),
 			NotBefore: time.Now().UTC().Unix(),
 			ExpiresAt: user.ExpiresAt.UTC().Unix(),
@@ -66,11 +70,24 @@ func callback(w http.ResponseWriter, r *http.Request, cfg *utils.ServerConfig) {
 		abortWithError(&w, http.StatusInternalServerError, err)
 		return
 	}
+	jwtToken = jwt.NewWithClaims(jwt.GetSigningMethod(cfg.JWT.Algorithm), Claims{
+		Email: user.Email,
+		StandardClaims: jwt.StandardClaims{
+			Id:        user.UserID,
+			Issuer:    user.Provider,
+			Subject:   user.Email,
+			Audience:  r.Host,
+			IssuedAt:  time.Now().UTC().Unix(),
+			NotBefore: time.Now().UTC().Unix(),
+			ExpiresAt: user.ExpiresAt.Add(2 * time.Hour).UTC().Unix(),
+		},
+	})
+	refreshtoken, err := jwtToken.SignedString([]byte(cfg.JWT.Secret))
 	// logger.Debug("token: ", token)
 	json := map[string]interface{}{
 		"type":          "Bearer",
 		"token":         token,
-		"refresh_token": user.RefreshToken,
+		"refresh_token": refreshtoken,
 	}
 	JSON(&w, http.StatusOK, json)
 }
