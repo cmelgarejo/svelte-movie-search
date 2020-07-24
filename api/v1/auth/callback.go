@@ -4,6 +4,8 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
+	"github.com/gorilla/mux"
+	"log"
 	"net/http"
 	"time"
 
@@ -23,6 +25,7 @@ type Claims struct {
 
 // CallbackHandler entry point of the slsfn /v{X}/date
 func CallbackHandler(w http.ResponseWriter, r *http.Request) {
+	log.Printf("muxVars: %v", mux.Vars(r))
 	cfg := &utils.ServerConfig{
 		JWT: utils.JWTConfig{
 			Algorithm: "HS512",
