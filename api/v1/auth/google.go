@@ -1,21 +1,15 @@
 package auth
 
 import (
-	"fmt"
 	"net/http"
 
-	// "github.com/cmelgarejo/go-gql-server/pkg/utils"
-	"github.com/markbates/goth/gothic"
+	"github.com/loopcontext/auth-api-go/gen"
+	"github.com/loopcontext/auth-api-go/src/auth"
 )
 
-// ProviderHandler entry point of the slsfn /v{X}/auth/[provider]
-func ProviderHandler(w http.ResponseWriter, r *http.Request) {
-	// You have to add value context with provider name to get provider name in GetProviderName method
-	r = addProviderToContext(r, "google")
-	// try to get the user without re-authenticating
-	if gothUser, err := gothic.CompleteUserAuth(w, r); err != nil {
-		gothic.BeginAuthHandler(w, r)
-	} else {
-		fmt.Printf("user: %#v", gothUser)
-	}
+// GoogleHandler entry point of the slfn /auth/google
+func GoogleHandler(w http.ResponseWriter, r *http.Request) {
+	db := gen.NewDBFromEnvVars()
+	defer db.Close()
+	auth.BeginVercel("google", w, r)
 }
