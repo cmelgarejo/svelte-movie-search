@@ -28,7 +28,7 @@ li {
   content: "";
   width: calc(100% - 1em);
   height: 2px;
-  background-color: green;
+  background-color: grey;
   display: block;
   bottom: -1px;
 }
